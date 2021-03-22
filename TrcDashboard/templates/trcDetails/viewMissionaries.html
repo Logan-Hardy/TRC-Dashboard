@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+
+<div class="text-center bg-mtc">
+    <h1 class="display-4">Missionaries</h1>
+</div>
+
+
+<div class="containter">
+    {% for missionary in missionaryData %}
+        <p>
+            {% if missionary.gender == 'F' %}
+                Sister
+            {% else  %}
+                Elder 
+            {% endif %}
+                {{ missionary }} is a 
+            {% if missionary.gender == 'F' %}
+                Female 
+            {% else %}
+                Male 
+            {% endif %}
+                {{ missionary.type }} 
+        </p>
+        <p>Check out their TRC detail <a href="{% url 'TrcDetails' missionary_id=missionary.id %}">Here!</a></p>
+
+        <br>
+    {% endfor %}
+</div>
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>Missionary Name</th>
+            <th>TRC Details</th>
+        </tr>
+        {% for missionary in missionaryData %}
+            <tr>
+                <td>
+                    {% if missionary.gender == 'F' %}
+                        Sister
+                    {% else  %}
+                        Elder 
+                    {% endif %}
+                        {{ missionary }}
+                </td>
+                <td><a class="btn btn-success" href="{% url 'TrcDetails' missionary_id=missionary.id %}">Details&rarr;</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+{%endblock%}

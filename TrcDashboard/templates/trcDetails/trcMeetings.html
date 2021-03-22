@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+
+<div class="text-center bg-mtc">
+    <h1 class="display-4">TRC Meetings</h1>
+</div>
+
+<div class="text-center">
+    <!-- Tab links -->
+    <div class="tab" style="text-align: center; ">
+        <div class="innerTab">
+            <button class="tablinks" onclick="openTab(event, 'Upcoming')" id="defaultOpen">Upcoming TRC</button>
+            <button class="tablinks" onclick="openTab(event, 'Past')">Past TRC</button>
+        </div>
+    </div>
+
+
+    <div id="Upcoming" class="tabcontent">
+        <div style="text-align: center; border-bottom: 1px solid lightgray; margin-bottom: 20px;">
+            <h2 style="padding-left: 10px; ">Upcoming TRC Meetings</h2>
+        </div>
+        <div class="table-responsive-sm">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>Date</th>
+                    <th>Room</th>
+                    <th>Investigator</th>
+                </tr>
+                <tr>
+                    <td>Tues 3/9 11:00 am</td>
+                    <td>201</td>
+                    <td>David Cutler</td>
+                </tr>
+                <tr>
+                    <td>Tues 3/9 3:30 pm</td>
+               
+                    <td>201</td>
+                    <td>Robert Allen</td>
+                </tr>
+                <tr>
+                    <td>Wed 3/9 3:30 pm</td>
+                    <td>201</td>
+                    <td>Frank Gallepsy</td>
+                </tr>
+                <tr>
+                    <td>Thur 3/9 11:00 am</td>
+                    <td>201</td>
+                    <td>Robert Allen</td>
+                </tr>
+                <tr>
+                    <td>Thur 3/9 3:30 pm</td>
+                    <td>201</td>
+                    <td>David Cutler</td>
+                </tr>
+                <tr>
+                    <td>Fri 3/9 3:30 pm</td>
+                    <td>201</td>
+                    <td>Robert Allen</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="Past" class="tabcontent">
+        <!--Job History TimeLine-->
+        <div style="text-align: center; border-bottom: 1px solid lightgray; margin-bottom: 20px;">
+            <h2 style="padding-left: 10px; ">Past TRC Recordings</h2>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>Date</th>
+                    <th>Room</th>
+                    <th>Investigator</th>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'trcDetails' %}">Fri 3/5 3:30 pm</a></td>
+  
+                    <td>213</td>
+                    <td>David Cutler</td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'trcDetails' %}">Thur 3/4 3:30 pm</a></td>
+              
+                    <td>221</td>
+                    <td>Robert Allen</td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'trcDetails' %}">Thur 3/4 11:00 am</a></td>
+                 
+                    <td>201</td>
+                    <td>Frank Gallepsy</td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'trcDetails' %}">Wed 3/3 3:30 pm</a></td>
+         
+                    <td>223</td>
+                    <td>Robert Allen</td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'trcDetails' %}">Tues 3/2 3:30 pm</a></td>
+            
+                    <td>201</td>
+                    <td>David Cutler</td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'trcDetails' %}">Tues 3/2 11:00 am</a></td>
+                
+                    <td>201</td>
+                    <td>Robert Allen</td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'trcDetails' %}">Sat 2/27 1:30 pm</a></td>
+                 
+                    <td>302</td>
+                    <td>Robert Allen</td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'trcDetails' %}">Fri 2/26 3:30 pm</a></td>
+          
+                    <td>201</td>
+                    <td>Robert Allen</td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'trcDetails' %}">Thur 2/25 3:30 pm</a></td>
+           
+                    <td>212</td>
+                    <td>Robert Allen</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    window.onload = function () {
+        document.getElementById("defaultOpen").click();
+    }
+</script>
+{%endblock%}
+

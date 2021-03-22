@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+
+<div class="text-center bg-mtc p-3 text-white">
+    <h1 class="display-4">Welcome Elder Johnson!</h1>
+</div>
+
+<br />
+<br />
+
+<div class="row">
+    <div class="col-lg-2">
+        <br />
+        <br />
+        
+        <div class="text-center">
+            <img src="{% static 'img/Speaker_Balance.PNG' %}" class="img-fluid" />
+        </div>
+        <br />
+        <br />
+
+        <div class="card my-4">
+            <h5 class="card-header">Averages</h5>
+            <div class="card-body">
+                <p class="m-0"><strong>Length: </strong>27 min.</p>
+                <p class="m-0"><strong>Overall Score: </strong>8/10</p>
+                <p class="m-0"><strong>Sentiment Score: </strong>0.34</p>
+                <p class="m-0"><strong>Time Speaking: </strong>13 min.</p>
+                <p class="m-0"><strong>Percent Speaking: </strong>48%</p>
+                <p class="m-0"><strong>Questions: </strong>22</p>
+                <p class="m-0"><strong>Scriptures: </strong>3</p>
+                <p class="m-0"><strong>Testimonies : </strong>4</p>
+                <p class="m-0"><strong>Filler Words : </strong>37</p>
+            </div>
+        </div>
+    </div>
+
+
+            <div class="text-center col-lg-8">
+
+                <br />
+                <h2>Last TRC Recording</h2>
+                <img class="img-fluid" src="{% static 'img/TheDistrict.PNG' %}" alt="">
+                <br />
+                <br>
+                <h4>Video Content Analysis</h4>
+                <img src="{% static 'img/MTC.PNG' %}" class="img-fluid" />
+                <br />
+            </div>
+
+            <div class="col-lg-2">
+                <br />
+                <br />
+
+                <h3></h3>
+                <div class="p-2">
+                    <div class="card my-4">
+                        <h5 class="card-header">Meetings</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <h6>Upcoming:</h6>
+                                    <p class="m-0">Tues 3/9 11:00 am</p>
+                                    <p class="m-0">Tues 3/9 3:30 pm</p>
+                                    <p class="m-0">Wed 3/10 3:30 pm</p>
+                                    <br />
+                                    <br />
+
+                                    <h6>Previous</h6>
+                                    <a href="{% url 'trcDetails' %}"><p class="m-0">Fri 3/5 3:30 pm</p></a>
+                                    <a href="{% url 'trcDetails' %}"><p class="m-0">Thur 3/4 3:30 pm</p></a>
+                                    <a href="{% url 'trcDetails' %}"><p class="m-0">Thur 3/4 11:00 pm</p></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{%endblock%}

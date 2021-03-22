@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+
+<div class="text-center bg-mtc">
+    {% if missionaryData is not null %}
+        <h1 class="display-4">
+            {% if missionaryData.gender == 'F' %}
+                Sister
+            {% else  %}
+                Elder 
+            {% endif %}
+                {{ missionaryData.last_name }}
+        </h1>
+    {% else %}
+        <h1 class="display-4">Fri 3/5 3:30 pm</h1>
+    {% endif %}
+</div>
+
+<br />
+<a href="{% url 'trcMeetings' %}"><button class="btn btn-primary">&#8592; Back</button></a>
+<br />
+<div class="row">
+    <div class="col-md-2">
+        <div class="card my-4" id="">
+            <h5 class="card-header">TRC Details</h5>
+            <div class="card-body">
+                <p class="m-0"><strong>Length: </strong>22 min.</p>
+                <p class="m-0"><strong>Overall Score: </strong>9/10</p>
+                <p class="m-0"><strong>Time Speaking: </strong>12 min.</p>
+                <p class="m-0"><strong>Percent Speaking: </strong>52%</p>
+                <p class="m-0"><strong>Silent Moments : </strong>2</p>
+            </div>
+        </div>
+
+        <div class="card my-4" id="">
+            <h5 class="card-header">TRC Report</h5>
+            <div class="card-body">
+                <p class="m-0"><strong>Sentiment Score: </strong>0.54</p>
+                <p class="m-0"><strong>Questions: </strong>15</p>
+                <p class="m-0"><strong>Scriptures: </strong>3</p>
+                <p class="m-0"><strong>Testimonies : </strong>3</p>
+                <p class="m-0"><strong>Filler Words : </strong>26</p>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="card my-4" id="">
+            <h5 class="card-header">Video Content Analysis</h5>
+            <div class="card-body">
+                <form method="post">
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                    <label for="vehicle1"> Speakers</label><br>
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                    <label for="vehicle2"> Silent Moments</label><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                    <label for="vehicle3"> Sentiment</label><br>
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                    <label for="vehicle1"> Questions</label><br>
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                    <label for="vehicle2"> Scriptures</label><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                    <label for="vehicle3"> Testimonies</label><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center col-md-8">
+        <br />
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" width="728" height="410" src="https://www.youtube.com/embed/G3UmBVn8IXs?start=57" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <br />
+        <h4>Video Content Analysis</h4>
+        <img src="{% static 'img/MTC.PNG' %}" class="img-fluid" />
+        <br />
+    </div>
+
+    <div class="col-md-2">
+    </div>
+</div>
+{%endblock%}

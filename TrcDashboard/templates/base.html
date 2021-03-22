@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>TRC Dashboard</title>
+
+    <link rel="icon" type="img/png" href="{% static 'img/missionary-training-center.png' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/blog-home.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" href={% url 'home' %}>
+                        <img src="{% static 'img/missionary-training-center.png' %}" class="img-navBar" />
+                    </a>
+                    <a class="navbar-brand" href={% url 'home' %}>TRC Review</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <partial name="_LoginPartial" />
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href={% url 'missionaries' %}>View Missionaries</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href={% url 'summary' %}>Summary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href={% url 'trcMeetings' %}>TRC Meetings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href={% url 'recommendations' %}>Recommendations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href={% url 'logout' %}>{{ user.username }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="m-3">
+            <main role="main" class="pb-3">
+                {% block content %}
+                {% endblock %}
+            </main>
+        </div>
+
+        <footer class="border-top footer bg-mtc">
+            <!--
+        <div class="row">
+            <div class="col-4 text-center m-0">
+                <p class="m-0"><strong>Address</strong></p>
+                <p class="m-0">MTC Information Desk</p>
+                <p class="m-0">2005 North 900 East</p>
+                <p class="m-0">Provo, UT 84602-1793</p>
+            </div>
+            <div class="col-4 m-0 centerThis">
+                <p class="m-0"><strong>Contact Information</strong></p>
+                <p class="m-0">24 hours/day</p>
+                <p class="m-0">Phone: +1 801-422-2602</p>
+                <p class="m-0">Email: mtcinfodesk@mtc.byu.edu</p>
+            </div>
+            <div class="col-4 text-center">
+                <p class="m-0"><strong>Links</strong></p>
+                <p class="m-0"><a>Missionary Training Centers</a></p>
+                <p class="m-0"><a>Teachers</a></p>
+                <p class="m-0"><a>Employees</a></p>
+            </div>
+        </div>
+            -->
+            <div class="container text-center">
+                &copy; 2021 - TRC Review Dashboard - <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+            </div>
+        </footer>
+    </body>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</html>

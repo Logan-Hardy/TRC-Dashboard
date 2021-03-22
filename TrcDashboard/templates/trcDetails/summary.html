@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+
+<div class="text-center bg-mtc">
+    <h1 class="display-4">TRC Summary</h1>
+</div>
+
+<br />
+<br />
+
+<div class="row">
+    <div class="col-lg-2">
+        <br />
+        <br />
+        <div class="text-center">
+            <img src="{% static 'img/Speaker_Balance.PNG' %}" class="img-fluid" />
+        </div>
+        <br />
+        <br />
+
+        <div class="card my-4" id="">
+            <h5 class="card-header">Averages</h5>
+            <div class="card-body">
+                <p class="m-0"><strong>Length: </strong>27 min.</p>
+                <p class="m-0"><strong>Overall Score: </strong>8/10</p>
+                <p class="m-0"><strong>Sentiment Score: </strong>0.34</p>
+                <p class="m-0"><strong>Time Speaking: </strong>13 min.</p>
+                <p class="m-0"><strong>Percent Speaking: </strong>48%</p>
+                <p class="m-0"><strong>Questions: </strong>22</p>
+                <p class="m-0"><strong>Scriptures: </strong>3</p>
+                <p class="m-0"><strong>Testimonies : </strong>4</p>
+                <p class="m-0"><strong>Filler Words : </strong>37</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card text-center col-lg-8">
+
+        <br />
+        <h2>Best TRC Recording</h2>
+        <img src="{% static 'img/TheDistrict.PNG' %}" />
+        <br />
+        <h4>Video Content Analysis</h4>
+        <img src="{% static 'img/MTC.PNG' %}" class="img-fluid" />
+        <br />
+        <h2>Could be Better TRC </h2>
+        <img src="{% static 'img/TheDistrict.PNG' %}" />
+        <br />
+        <h4>Video Content Analysis</h4>
+        <img src="{% static 'img/MTC.PNG' %}" class="img-fluid" />
+        <br />
+    </div>
+
+    <div class="col-md-2">
+        <br />
+    </div>
+</div>
+{%endblock%}

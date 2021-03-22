@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+{% load socialaccount %}
+<html>
+  <body>
+  <h1 class="text-center">Login with Google!</h1>
+  {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}!</p>
+    <p>You are currently logged in</p>
+    
+    {% comment %} <a href="{% provider_logout_url 'google' %}">
+      <button class="btn btn-danger" type="submit">Log Out</button>
+    </a> {% endcomment %}
+    <a href="#" onclick="signOut();">Sign out</a>
+    
+  {% else %}
+  <a href="{% provider_login_url 'google' %}">Login with Google</a>
+  {% endif %}
+
+  </body>
+</html>
+
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+{%endblock%}
